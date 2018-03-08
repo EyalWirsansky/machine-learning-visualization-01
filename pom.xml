@@ -27,9 +27,6 @@
 			<version>${dl4j.version}</version>
 		</dependency>
 
-		<!-- dependency> <groupId>org.deeplearning4j</groupId> <artifactId>deeplearning4j-ui_2.11</artifactId> 
-			<version>0.9.1</version> </dependency -->
-
 		<dependency>
 			<groupId>org.jfree</groupId>
 			<artifactId>jfreechart</artifactId>

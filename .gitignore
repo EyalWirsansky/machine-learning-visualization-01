@@ -1,0 +1,19 @@
+logs
+
+# generated
+build
+gen/
+**/generated-sources/
+**/classes/
+**/target//
+
+# eclipse
+.metadata/
+.recommenders/
+**.launch
+**/.classpath/
+**/.project/
+**/.settings/
+**/build/
+**/bin/
+*.class

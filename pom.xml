@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.eyal.neural</groupId>
+	<artifactId>dl4j-test</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>dl4j-test</name>
+
+	<properties>
+		<dl4j.version>0.9.1</dl4j.version>
+		<datavec.version>0.9.1</datavec.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.nd4j</groupId>
+			<artifactId>nd4j-native-platform</artifactId>
+			<version>${dl4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.deeplearning4j</groupId>
+			<artifactId>deeplearning4j-core</artifactId>
+			<version>${dl4j.version}</version>
+		</dependency>
+
+		<!-- dependency> <groupId>org.deeplearning4j</groupId> <artifactId>deeplearning4j-ui_2.11</artifactId> 
+			<version>0.9.1</version> </dependency -->
+
+		<dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.0.19</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jzy3d</groupId>
+			<artifactId>jzy3d-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>jzy3d-snapshots</id>
+			<name>Jzy3d Snapshots</name>
+			<url>http://maven.jzy3d.org/snapshots</url>
+		</repository>
+		<repository>
+			<id>jzy3d-releases</id>
+			<name>Jzy3d Snapshots</name>
+			<url>http://maven.jzy3d.org/releases</url>
+		</repository>
+	</repositories>
+
+
+</project>

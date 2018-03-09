@@ -22,36 +22,29 @@ import org.nd4j.linalg.dataset.api.preprocessor.NormalizerStandardize;
 import com.eyal.neural.visualize.data.BenchmarkDataset;
 import com.eyal.neural.visualize.plot.CombinedPlotter;
 
-public class ClassifierTest {
-
-	private static final int SEED = 42;
+public class BaseClassifierTest {
 
 	protected DataSet createDataSet(BenchmarkDataset dataset,
 			RecordReader recordReader, int maxDataPoints) throws FileNotFoundException, IOException, InterruptedException {
-		// read data-set from file: -------------------------------------------
+		
+		// read data-set from file: 
 		recordReader.initialize(new FileSplit(
 				new ClassPathResource(dataset.fileName).getFile()));
 
 		DataSetIterator iterator = new RecordReaderDataSetIterator(
 				recordReader, dataset.fileLines, dataset.featuresCount, dataset.classesCount);
 
-		//DataSet allData = iterator.next();
-		DataSet allData = iterator.next().batchBy(maxDataPoints).get(0);
+		// take part of the data, no more than maxDataPoints:
+		DataSet data = iterator.next().batchBy(maxDataPoints).get(0);
 
-		allData.shuffle(SEED);
-
-		// transform data to normal distribution: -------------------------
+		// transform data to normal distribution: 
 		DataNormalization normalizer = new NormalizerStandardize();
-		normalizer.fit(allData);
-		normalizer.transform(allData);
+		normalizer.fit(data);
+		normalizer.transform(data);
 
-		// split data to test and train sets: -----------------------------
-		//SplitTestAndTrain testAndTrain = allData.splitTestAndTrain(PERCENT_TRAIN);
-		//DataSet trainingData = testAndTrain.getTrain();
-		//DataSet testData = testAndTrain.getTest();
-		return allData;
+		return data;
 	}
-
+	
 	protected static void plotDataWithJzy3d(MultiLayerNetwork model, DataSet dataset, float pointWidth) {
 
 		// surface: ---------------------------------------

@@ -17,6 +17,7 @@ import org.jzy3d.plot3d.primitives.Scatter;
 import org.jzy3d.plot3d.primitives.Shape;
 import org.jzy3d.plot3d.rendering.canvas.Quality;
  
+// a combination of surface and scatter plots on the same axis system
 public class CombinedPlotter extends AbstractAnalysis { 
  
 	// surface:
@@ -53,7 +54,6 @@ public class CombinedPlotter extends AbstractAnalysis {
  
         // scatter:
         Scatter scatter = new Scatter(points, colors, pointWidth);        
-       	//chart = AWTChartComponentFactory.chart(Quality.Advanced, "newt"); 
         chart.getScene().add(scatter);
     } 
     
@@ -75,7 +75,7 @@ public class CombinedPlotter extends AbstractAnalysis {
         int steps = 80;
 
         // scatter: -------------------
-        int size = 50000; //0;
+        int size = 50000;
         float x;
         float y;
         float z;
@@ -92,7 +92,6 @@ public class CombinedPlotter extends AbstractAnalysis {
         	y = r.nextFloat() * (range.getMax() - range.getMin()) - range.getMax() ;
         	z = r.nextFloat() * (range.getMax() - range.getMin()) - range.getMax() ;
 
-        	//System.err.println("x = " + x + ", y = " + y + ", z = " + z);
             points[i] = new Coord3d(x, y, z);
             a = 0.25f;
             colors[i] = new Color(x, y, z, a);

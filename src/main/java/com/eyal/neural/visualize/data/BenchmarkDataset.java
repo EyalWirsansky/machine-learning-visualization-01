@@ -1,7 +1,6 @@
 package com.eyal.neural.visualize.data;
 
 public enum BenchmarkDataset {
-	IRIS_DATASET("iris.txt", 4, 3, 150),
 	IRIS_2D_DATASET("iris_2D.txt", 2, 2, 100),
 	CLOUDS_DATASET("clouds.txt", 2, 2, 5000),
 	CONCENTRIC_DATASET("concentric.txt", 2, 2, 2500),

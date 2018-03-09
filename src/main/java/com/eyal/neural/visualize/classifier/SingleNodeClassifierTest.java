@@ -15,7 +15,7 @@ import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 import com.eyal.neural.visualize.data.BenchmarkDataset;
 
-public class SingleNodeClassifierTest extends ClassifierTest {
+public class SingleNodeClassifierTest extends BaseClassifierTest {
 
 	private static final int DATA_POINTS = 200;
 	private static final float POINT_WIDTH = 5.0f;
@@ -41,7 +41,6 @@ public class SingleNodeClassifierTest extends ClassifierTest {
 
 			MultiLayerNetwork model = new MultiLayerNetwork(configuration);
 			model.init();
-			//addUIServer(model);
 			
 			System.err.println("Training...");
 			model.fit(allData);
@@ -70,7 +69,7 @@ public class SingleNodeClassifierTest extends ClassifierTest {
 			.regularization(true).l2(0.0001)
 	
 			.list()
-			// single later/node:
+			// single layer/node:
 			.layer(0, new OutputLayer.Builder(
 					LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
 					.activation(Activation.SOFTMAX)
